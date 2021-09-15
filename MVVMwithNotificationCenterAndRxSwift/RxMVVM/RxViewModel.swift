@@ -16,7 +16,7 @@ final class RxViewModel {
 
     init(idTextObservable: Observable<String?>,
          passwordTextObservable: Observable<String?>,
-         rxModel: RxModel) {
+         rxModel: RxModelProtocol) {
         let event = Observable
             .combineLatest(idTextObservable, passwordTextObservable) //2つのObservableを合成
             .skip(1) //最初のストリームをスキップ
